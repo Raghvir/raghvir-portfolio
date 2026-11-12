@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raghvir Singh – Senior UI/UX Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#78b4ff;--surface:#fff;--ink:#17123a;--muted:#24306a;--sun:#32f43a;--org:#ff6b35;--pink:#ff7ac6;--sky:#5ad1ff;--mint:#7be3b5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a4a;--surface:#142a73;--ink:#f4f0ff;--muted:#b9b4e0}}
+:root[data-theme="dark"]{--bg:#0b1a4a;--surface:#142a73;--ink:#f4f0ff;--muted:#b9b4e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;margin:0;line-height:1}
+a:focus-visible{outline:3px solid var(--org);outline-offset:3px}
+.wrap{max-width:none;margin:0;padding:0 clamp(18px,4vw,64px)}
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:50%;transform:translateX(-50%);width:min(960px,calc(100% - 24px));z-index:40;display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--surface);color:var(--ink);border:4px solid var(--ink);border-radius:999px;box-shadow:6px 6px 0 var(--ink);font-weight:500}
+nav a{text-decoration:none}
+nav .logo{width:46px;height:46px;border-radius:50%;background:var(--sun);color:#17123a;border:3px solid var(--ink);display:grid;place-items:center;font:800 18px "Bricolage Grotesque";transition:transform .6s}
+nav .logo:hover{transform:rotate(360deg)}
+nav div{display:flex;gap:6px;align-items:center}
+nav div a{padding:7px 16px;border-radius:999px;border:3px solid transparent}
+nav div a:hover{border-color:var(--ink);background:var(--sky);color:#17123a}
+nav div a.hire{background:var(--org);color:#17123a;border-color:var(--ink)}nav div a.hire:hover{background:var(--sun)}
+/* hero */
+.hero{position:relative;margin:98px auto 0;max-width:none;width:calc(100% - clamp(36px,8vw,128px));min-height:min(86vh,720px);background:#0a0f3d;color:#f4f0ff;border:4px solid var(--ink);border-radius:36px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,4vw,52px);box-shadow:10px 10px 0 var(--ink);--mx:30%;--my:45%}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;animation:fl 14s ease-in-out infinite alternate}
+.b1{width:46%;aspect-ratio:1;background:var(--pink);left:-8%;top:-18%}
+.b2{width:42%;aspect-ratio:1;background:var(--sky);right:-6%;top:6%;animation-delay:-5s}
+.b3{width:38%;aspect-ratio:1;background:var(--org);right:22%;bottom:-24%;animation-delay:-9s}
+@keyframes fl{to{transform:translate(8%,10%) scale(1.15)}}
+.hero>*:not(.blob){position:relative;z-index:2}
+.top{position:absolute!important;left:clamp(22px,4vw,52px);right:clamp(22px,4vw,52px);top:clamp(20px,3vw,36px);display:flex;flex-wrap:wrap;gap:10px}
+.top span{border:3px solid #f4f0ff;border-radius:999px;padding:3px 16px;font-weight:500;font-size:15px;backdrop-filter:blur(6px)}
+.top .ok::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--mint);margin-right:8px;animation:pl 1.6s infinite}
+@keyframes pl{50%{opacity:.3}}
+.hero h1{font-size:clamp(64px,17.5vw,250px);font-weight:800;letter-spacing:-.05em;line-height:.88;background:radial-gradient(circle 340px at var(--mx) var(--my),#32f43a,#ff7ac6 42%,rgba(244,240,255,.8) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:0 0 18px}
+.hero h1 b{display:block;-webkit-text-stroke:3px #f4f0ff;margin-left:.6em}
+.role{font:600 clamp(24px,4vw,46px)/1.15 "Bricolage Grotesque",sans-serif;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#wd{display:inline-block;background:var(--sun);color:#17123a;padding:4px 18px;border-radius:999px;border:3px solid #f4f0ff;animation:pop .45s}
+@keyframes pop{from{transform:translateY(14px) scale(.9);opacity:0}}
+.bio{max-width:52ch;margin:16px 0 0;opacity:.85;font-size:18px}
+.belt{overflow:hidden;background:var(--ink);color:var(--bg);padding:14px 0;transform:rotate(-1.5deg);margin:60px -10px;border-block:4px solid var(--ink)}
+.belt div{display:flex;gap:34px;width:max-content;font:800 28px "Bricolage Grotesque";animation:m 40s linear infinite}
+.belt div+div{animation-direction:reverse;color:var(--sun);margin-top:8px}.belt span{white-space:nowrap}
+@keyframes m{to{transform:translateX(-50%)}}
+#cur{position:fixed;left:0;top:0;z-index:50;pointer-events:none;display:none}
+#cur i{display:block;width:16px;height:18px;background:var(--org);clip-path:polygon(0 0,100% 55%,45% 62%,25% 100%)}
+#cur span{display:block;background:var(--org);color:#17123a;font:500 13px "DM Sans";padding:2px 10px;border-radius:0 12px 12px 12px;margin:0 0 0 12px;white-space:nowrap}
+section{padding:60px 0}
+h2{font-size:clamp(40px,7vw,80px);font-weight:800;letter-spacing:-.035em;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:36px 30px}
+.card{display:block;text-decoration:none;background:var(--surface);color:var(--ink);border:4px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);transform:rotate(var(--r));transition:transform .25s,box-shadow .25s}
+.card:hover,.card:focus-visible{transform:rotate(0) translate(-4px,-4px) scale(1.02);box-shadow:14px 14px 0 var(--org)}
+.thumb{height:200px;border-bottom:4px solid var(--ink);display:grid;place-items:center;position:relative;color:#fff;font:800 150px/1 "Bricolage Grotesque",sans-serif;text-shadow:5px 5px 0 rgba(23,18,58,.9)}
+.thumb em{position:absolute;right:14px;bottom:12px;font:500 14px "DM Sans";background:#fff;color:#17123a;border-radius:999px;padding:1px 12px;text-shadow:none;border:3px solid #17123a}
+.card div.t{padding:14px 18px 18px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card h3{font-size:20px;overflow-wrap:anywhere}.card b{background:var(--sun);color:#17123a;border:3px solid var(--ink);border-radius:999px;padding:1px 12px;font-size:14px;flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.chips a{padding:8px 18px;border:3px solid var(--ink);border-radius:999px;text-decoration:none;background:var(--surface);color:var(--ink);font-weight:500}
+.chips a:hover{background:var(--sky);color:#17123a}
+.peaks{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:end}
+.pk{position:relative;overflow:hidden;color:#17123a;border:4px solid var(--ink);border-radius:28px;padding:22px 22px 24px;box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column;justify-content:flex-end;min-height:var(--h);transition:transform .25s,box-shadow .25s}
+.pk:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:12px 12px 0 var(--org)}
+.pk .yr{position:absolute;right:-6px;top:-6px;font:800 clamp(90px,12vw,150px)/1 "Bricolage Grotesque",sans-serif;-webkit-text-stroke:3px #17123a;-webkit-text-fill-color:transparent;opacity:.4;pointer-events:none}
+.pk small{font-weight:500;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:0 14px;align-self:flex-start;margin-bottom:12px}
+.pk .live::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--org);margin-right:8px;animation:pl 1.6s infinite}
+.lv{display:flex;gap:6px;margin-top:16px;align-items:center;font-weight:500;font-size:14px}.lv i{width:30px;height:12px;border:3px solid var(--ink);border-radius:99px;background:#fff}.lv i.f{background:var(--ink)}.lv span{margin-left:6px}
+.pk h3{font-size:28px;margin-bottom:8px}.pk p{margin:2px 0;font-size:16px}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+.st{position:relative;display:flex;background:var(--surface);color:var(--ink);border:4px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transform:rotate(var(--r));transition:transform .25s,box-shadow .25s}
+.st:hover{transform:rotate(0) translateY(-6px);box-shadow:10px 10px 0 var(--c)}
+.st em{writing-mode:vertical-rl;transform:rotate(180deg);background:var(--c);color:#17123a;font:800 30px "Bricolage Grotesque",sans-serif;padding:16px 10px;border-left:4px solid var(--ink);display:grid;place-items:center}
+.st span{display:block;padding:20px 80px 22px 20px}
+.seal{position:absolute;right:12px;top:12px;width:54px;height:54px;border-radius:50%;background:var(--c);border:3px solid var(--ink);display:grid;place-items:center;font:800 19px "Bricolage Grotesque",sans-serif;color:#17123a;transform:rotate(12deg)}
+.k span{padding:8px 18px;border:3px dashed var(--ink);border-radius:999px;font-weight:500}
+.edu b{font:800 20px "Bricolage Grotesque"}.edu p{margin:2px 0;color:var(--muted);font-size:15px}
+.contact{background:var(--org);color:#17123a;border:4px solid var(--ink);border-radius:36px;padding:50px 34px;box-shadow:10px 10px 0 var(--ink);margin:20px 0 40px;text-align:center}
+.contact h2{margin-bottom:20px}
+.mail{display:inline-block;font:800 clamp(18px,4vw,40px) "Bricolage Grotesque";background:var(--surface);color:var(--ink);border:4px solid var(--ink);border-radius:999px;padding:12px 30px;text-decoration:none;box-shadow:6px 6px 0 var(--ink);overflow-wrap:anywhere}
+.mail:hover{background:var(--sun);color:#17123a}
+footer{padding:0 0 40px;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.peaks{grid-template-columns:1fr}.pk{min-height:0!important;padding-top:84px}.hero h1 b{margin-left:.25em}}
+@media(max-width:560px){.links a:nth-child(2),.brand small{display:none}.top{position:relative!important;left:auto;right:auto;top:auto;margin-bottom:auto}}
+nav{overflow:hidden;padding:8px 8px 8px 8px;transition:width .4s cubic-bezier(.3,1.3,.5,1),top .3s}
+nav.sm{width:min(700px,calc(100% - 24px))}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font:800 18px/1.05 "Bricolage Grotesque",sans-serif;padding-right:10px}
+.brand b{font-weight:800}.brand small{display:block;font:400 12px "DM Sans",sans-serif;color:var(--muted);margin-top:2px}
+.brand:hover .logo{transform:rotate(360deg)}
+.links{position:relative}.links a{position:relative;z-index:1}
+.links a:hover{background:transparent;border-color:transparent}.links a.on,.links a:hover{color:#17123a}
+.ind{position:absolute;top:0;bottom:0;left:0;width:0;border-radius:999px;background:var(--sky);border:3px solid var(--ink);opacity:0;transition:left .35s cubic-bezier(.3,1.4,.5,1),width .35s,opacity .2s}
+.end{gap:8px!important}
+#tm{width:42px;height:42px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);color:#17123a;font-size:18px;cursor:pointer;transition:transform .4s}
+#tm:hover{transform:rotate(30deg) scale(1.1)}#tm:focus-visible{outline:3px solid var(--org);outline-offset:3px}
+nav .hire{transition:transform .2s,background .2s}nav .hire:hover{transform:rotate(-3deg) scale(1.06)}
+.prog{position:absolute;left:0;bottom:0;width:100%;height:5px;background:var(--org);transform-origin:left;transform:scaleX(0)}
+@media(max-width:470px){.brand b{display:none}}
+body{background-image:radial-gradient(color-mix(in srgb,var(--ink) 16%,transparent) 1.6px,transparent 1.7px);background-size:28px 28px}
+nav{width:calc(100% - clamp(36px,8vw,128px))}
+section{position:relative}
+.wm{position:absolute;right:0;top:10px;z-index:-1;font:800 clamp(110px,21vw,330px)/.85 "Bricolage Grotesque",sans-serif;letter-spacing:-.05em;-webkit-text-stroke:3px var(--ink);-webkit-text-fill-color:transparent;opacity:.14;pointer-events:none;white-space:nowrap}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;margin-bottom:38px}.hd h2{margin:0}
+.note{max-width:34ch;margin:0;background:var(--sun);color:#17123a;border:4px solid var(--ink);border-radius:20px;padding:14px 20px;transform:rotate(2.5deg);box-shadow:6px 6px 0 var(--ink);font-weight:500}
+.cardh,.fs{position:absolute!important}
+.cardh{right:clamp(22px,4vw,52px);top:96px;width:290px;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);border:3px solid #f4f0ff;border-radius:24px;padding:18px 20px;rotate:3deg;animation:bob 7s ease-in-out infinite alternate}
+.cardh p{margin:0;font-size:14px;opacity:.8}.cardh b{display:block;font:800 24px/1.1 "Bricolage Grotesque",sans-serif;margin:6px 0 4px}
+.cardh div{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.cardh i{font-style:normal;font-size:13px;border:2px solid #f4f0ff;border-radius:999px;padding:0 10px}
+.fs{font:800 clamp(16px,1.6vw,24px) "Bricolage Grotesque",sans-serif;color:#17123a;border:3px solid #f4f0ff;border-radius:999px;padding:6px 20px;box-shadow:5px 5px 0 rgba(244,240,255,.9);rotate:var(--r);animation:bob 6s ease-in-out infinite alternate}
+@keyframes bob{to{translate:0 -14px}}
+.contact{position:relative;overflow:hidden}.contact>*{position:relative;z-index:1}
+.contact::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--sun);border:4px solid var(--ink);left:-80px;top:-90px}
+.contact::after{content:"";position:absolute;width:200px;height:200px;border-radius:36px;background:var(--pink);border:4px solid var(--ink);right:-50px;bottom:-70px;rotate:18deg}
+.bigf{font:800 clamp(56px,15.4vw,300px)/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.05em;text-align:center;white-space:nowrap;overflow:hidden;margin:30px 0 14px;-webkit-text-stroke:3px var(--ink);-webkit-text-fill-color:transparent;transition:-webkit-text-fill-color .4s}
+@media(max-width:1180px){.cardh{display:none}}@media(max-width:1300px){.fs{display:none!important}}
+.card{background:#fff;color:#0b2a7a}
+.card div.t{padding:18px 20px 22px}
+.card h3{font-size:clamp(22px,2vw,28px);font-weight:800;color:#0b2a7a;line-height:1.1}
+.card b{color:#0b2a7a;font-size:17px;padding:3px 18px}
+.thumb em{color:#0b2a7a;font-size:16px;padding:2px 14px}
+.bigf{font-size:13vw;line-height:1.12;overflow:visible}.bigf span{display:inline-block}
+html{overflow-x:clip}
+nav a{color:var(--ink)}
+.hero h1{margin-bottom:38px}
+.card div.t{flex-direction:column;align-items:flex-start;gap:12px}
+.edu b,.mail,nav .logo,.belt div{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.thumb em,#cur span{font-family:"DM Sans",system-ui,sans-serif}
+@media(max-width:600px){.hero h1{font-size:20vw}.contact{padding:44px 18px}.contact::before{width:110px;height:110px;left:-50px;top:-50px}.contact::after{width:100px;height:100px;right:-40px;bottom:-45px}.mail{font-size:clamp(14px,4.3vw,20px);padding:10px 16px}}
+/* --- creative hero --- */
+.hero::before{content:"";position:absolute;inset:-45%;background:conic-gradient(from 0deg at 60% 50%,#7b2fff,#ff2e93,#ff9a3c,#00e5ff,#7b2fff);filter:blur(90px);opacity:.5;animation:hspin 26s linear infinite}
+@keyframes hspin{to{transform:rotate(360deg)}}
+.b1{background:#ff2e93}.b2{background:#00d8ff}.b3{background:#ff9a3c}
+.hero h1{background:linear-gradient(100deg,#fff 0%,#ffc2e6 18%,#8ef7ff 38%,#fff 52%,#ffd08a 72%,#fff 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:sheen 9s linear infinite}
+@keyframes sheen{to{background-position:200% 0}}
+/* --- dark cards --- */
+.pk{color:#fff}.pk small{color:#0b1a4a}.pk .yr{-webkit-text-stroke:3px #fff;opacity:.22}
+.lv i{border-color:#fff;background:transparent}.lv i.f{background:#fff}
+.st{background:#0d1a52;color:#fff}.st p{color:#c6d4ff}.st em,.seal{color:#fff}
+/* --- animated contact + name cards --- */
+@keyframes grad{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.contact{background:linear-gradient(120deg,#0a1e66,#4a1fa8,#0b6b8a,#0a1e66);background-size:300% 100%;animation:grad 12s ease infinite;color:#fff}
+.contact h2{color:#fff}
+.contact::before{animation:bob 5s ease-in-out infinite alternate}.contact::after{animation:bob 6.5s -2s ease-in-out infinite alternate}
+.mail{animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:6px 6px 0 var(--ink),0 0 0 0 rgba(255,255,255,.6)}70%,100%{box-shadow:6px 6px 0 var(--ink),0 0 0 20px rgba(255,255,255,0)}}
+.contact:hover,.bigf:hover{translate:0 -6px}
+.bigf{background:linear-gradient(120deg,#0a1e66,#2b1a8a,#0a1e66);background-size:250% 100%;animation:grad 14s ease infinite;border:4px solid var(--ink);border-radius:32px;box-shadow:10px 10px 0 var(--ink);padding:clamp(14px,3vw,34px) clamp(10px,2vw,28px);margin:34px 0 22px;-webkit-text-stroke:0}
+.bigf span{background:linear-gradient(100deg,#fff,#8ef7ff,#ff9bd5,#fff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sheen 8s linear infinite}
+.rv{opacity:0;scale:.95;translate:0 50px;transition:opacity .7s,scale .7s,translate .7s}
+.rv.in{opacity:1;scale:1;translate:0 0}.rv.in:hover{translate:0 -6px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="cur" aria-hidden="true"><i></i><span>Raghvir</span></div>
+<nav id="nav"><a class="brand" href="#hero" aria-label="Back to top"><span class="logo">RS</span><b>Raghvir Singh<small>UI/UX designer</small></b></a><div class="end"><button id="tm" aria-label="Switch light and dark mode"></button><a class="hire" href="#contact">Hire me</a></div><span class="prog" id="prog"></span></nav>
+
+<header class="hero" id="hero">
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="top"><span class="ok">Open to new projects</span><span>Mohali, India</span><span>10+ years designing</span></div>
+<div class="cardh" aria-hidden="true"><p>Currently</p><b>Senior UI/UX Designer</b><p>Euclide Software Solutions</p><div><i>Figma</i><i>Adobe XD</i><i>Photoshop</i><i>Illustrator</i></div></div>
+<span class="fs" style="right:8%;bottom:34%;--r:-6deg;background:var(--pink)">Pixel perfect</span><span class="fs" style="right:24%;bottom:14%;--r:4deg;background:var(--sky)">Design to code</span><span class="fs" style="right:5%;bottom:12%;--r:-3deg;background:var(--sun)">From Himachal</span>
+<h1>Raghvir<b>Singh</b></h1>
+<div class="role">I design <span id="wd">websites</span></div>
+<p class="bio">Senior UI/UX designer from Himachal. Scroll down to see my work, my journey and how to reach me.</p>
+</header>
+
+<div class="belt" aria-label="Skills"><div id="b1"></div><div id="b2"></div></div>
+
+<div class="wrap">
+<section id="work">
+<b class="wm" aria-hidden="true">Work</b><div class="hd"><h2>Things I’ve made</h2><p class="note">Every card is a live website I designed. Click one to open it.</p></div>
+<div class="grid" id="grid"></div>
+
+<div class="chips"><a href="https://www.behance.net/raghvirsingh" target="_blank" rel="noopener" style="background:var(--pink);color:#17123a">Even more on Behance</a></div>
+</section>
+
+<section id="path">
+<b class="wm" aria-hidden="true">Climb</b><div class="hd"><h2>The climb</h2><p class="note">Ten years of UI/UX work, from Chandigarh to Mohali.</p></div>
+<div class="peaks">
+<div class="pk" style="--h:300px;background:linear-gradient(160deg,#1a4fd6,#0a1e66)"><span class="yr">2016</span><small>Jul 2016 – Jan 2020</small><h3>UI/UX Designer</h3><p>Nimble Solutions</p><p>Chandigarh</p><div class="lv"><i class="f"></i><i></i><i></i><span>about 3.5 years</span></div></div>
+<div class="pk" style="--h:380px;background:linear-gradient(160deg,#6a2fd8,#2a0f6b)"><span class="yr">2020</span><small>Feb 2020 – Sep 2022</small><h3>Senior UI/UX Designer</h3><p>Roots Infocomm</p><p>Mohali</p><div class="lv"><i class="f"></i><i class="f"></i><i></i><span>about 2.5 years</span></div></div>
+<div class="pk" style="--h:460px;background:linear-gradient(160deg,#0fa862,#05402c)"><span class="yr">2022</span><small class="live">Sep 2022 – now</small><h3>Senior UI/UX Designer</h3><p>Euclide Software Solutions</p><p>Mohali</p><div class="lv"><i class="f"></i><i class="f"></i><i class="f"></i><span>4+ years and counting</span></div></div>
+</div>
+</section>
+
+<section>
+<b class="wm" aria-hidden="true">Learn</b><div class="hd"><h2>Where I learned</h2><p class="note">Web design and software engineering, all in Hamirpur.</p></div>
+<div class="edu">
+<div class="st" style="--c:#2f6bff;--r:-1.5deg"><em>2014</em><span><b>Web Designing</b><p>Webcodeft Technologies, Hamirpur</p></span><strong class="seal">A</strong></div>
+<div class="st" style="--c:#b13bd1;--r:1.2deg"><em>2013</em><span><b>Diploma in Software Eng.</b><p>NIIT Hamirpur</p></span><strong class="seal">A</strong></div>
+<div class="st" style="--c:#12a35a;--r:-.8deg"><em>2013</em><span><b>B.A.</b><p>N.S.C.B.M. PG College, Hamirpur</p></span><strong class="seal">61%</strong></div>
+</div>
+<div class="chips k"><span>Class XII, Silver Bell’s S.S.S Hamirpur, 2010, 66%</span><span>Class X, Aryan Public School Hamirpur, 2008, 66%</span></div>
+<div hidden>
+</div>
+</section>
+
+<section id="contact" style="padding:30px 0 0">
+<div class="contact"><h2>Let’s make something.</h2><a class="mail" href="mailto:raghvirsingh92@gmail.com">raghvirsingh92@gmail.com</a></div>
+</section>
+<div class="bigf" aria-hidden="true"><span>Raghvir Singh</span></div>
+<footer>© 2026 Raghvir Singh · Mohali, India</footer>
+</div>
+
+<script>
+const sites=[["citadelagency.com.au","https://www.citadelagency.com.au/"],["smarcomms.com","https://smarcomms.com/"],["sachinnssharma.com","https://sachinnssharma.com/"],["astrosaurab.com","https://astrosaurab.com/"],["euclideesoftwaresolutions.com","https://euclideesoftwaresolutions.com/"],["newskinsociety.com","https://newskinsociety.com/"],["ridewheelshare.com","https://ridewheelshare.com/"],["cypherguard.com","https://cypherguard.com/"],["campbellcontemporary.com","https://campbellcontemporary.com/frontpage/"],["turningpointmedspa.com","https://turningpointmedspa.com/"],["starbuildersdfw.com","https://starbuildersdfw.com/"],["mrehproperties.com","https://mrehproperties.com/"]];
+const pal=[["#5b3df5","#ff7ac6","#1b1450"],["#ff6b35","#32f43a","#7a1f5c"],["#12a594","#a9ffad","#0b4a5c"],["#ff7ac6","#5ad1ff","#5b3df5"],["#32f43a","#ff6b35","#5b3df5"],["#5ad1ff","#7be3b5","#17123a"]];
+const rot=[-2.5,1.8,-1.2,2.4,-1.8,1.2];
+sites.forEach((s,i)=>{const p=i<6?pal[i]:[pal[i%6][1],pal[i%6][0],pal[i%6][2]],tld=s[0].slice(s[0].indexOf("."));
+grid.insertAdjacentHTML("beforeend",`<a class="card" style="--r:${rot[i%6]}deg" href="${s[1]}" target="_blank" rel="noopener"><div class="thumb" style="background:radial-gradient(circle at 15% 15%,${p[0]} 0,transparent 60%),radial-gradient(circle at 90% 85%,${p[1]} 0,transparent 55%),${p[2]}">${s[0][0].toUpperCase()}<em>${tld}</em></div><div class="t"><h3>${s[0]}</h3><b>Visit</b></div></a>`);});
+const r1="Figma,Adobe XD,Photoshop,Illustrator,UI/UX,Wireframing,Landing pages,Logo design,Brand identity,Typography".split(","),
+r2="HTML5,CSS3,Bootstrap,Responsive,WordPress,Elementor,Shopify,React basics,JavaScript basics,Canva,Retouching".split(",");
+const fill=(el,a)=>el.innerHTML=[...a,...a].map(x=>`<span>${x} ✦</span>`).join("");fill(b1,r1);fill(b2,r2);
+// header: shrink + progress, theme toggle
+const navEl=document.getElementById("nav"),pgEl=document.getElementById("prog");
+function spy(){navEl.classList.toggle("sm",scrollY>60);pgEl.style.transform=`scaleX(${Math.min(1,scrollY/Math.max(1,document.body.scrollHeight-innerHeight))})`}
+addEventListener("scroll",spy,{passive:true});spy();
+const tm=document.getElementById("tm"),R=document.documentElement,isD=()=>R.dataset.theme?R.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches,sync=()=>tm.textContent=isD()?"☀":"☾";sync();
+tm.onclick=()=>{R.dataset.theme=isD()?"light":"dark";sync()};
+// rotating role word
+const W=["websites","brands","landing pages","interfaces","logos"];let wi=0;
+setInterval(()=>{wi=(wi+1)%W.length;const e=document.getElementById("wd");e.textContent=W[wi];e.style.animation="none";e.offsetWidth;e.style.animation=""},2200);
+// spotlight follows pointer, drifts on its own otherwise
+const hero=document.getElementById("hero");let tx=30,ty=45,cx=30,cy=45,act=0;
+hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100;act=performance.now();
+if(e.pointerType=="mouse"){cur.style.display="block";cur.style.transform=`translate(${e.clientX}px,${e.clientY}px)`}});
+hero.addEventListener("pointerleave",()=>cur.style.display="none");
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".contact,.bigf").forEach(el=>{el.classList.add("rv");io.observe(el)});
+// fit footer name to any screen width
+const bf=document.querySelector(".bigf"),bs=bf.firstElementChild;
+function fit(){bf.style.fontSize="100px";const cs=getComputedStyle(bf),w=bf.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),s=bs.getBoundingClientRect().width;bf.style.fontSize=Math.floor(100*w/s*.96)+"px"}
+fit();addEventListener("resize",fit);if(document.fonts)document.fonts.ready.then(fit);
+(function f(t){if(t-act>2500){tx=50+38*Math.sin(t/2200);ty=55+22*Math.cos(t/1700)}
+cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;hero.style.setProperty("--mx",cx+"%");hero.style.setProperty("--my",cy+"%");requestAnimationFrame(f)})(0);
+</script>
+</body>
+</html>
